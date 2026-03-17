@@ -19,7 +19,8 @@ void mostrarPessoa(Pessoa p){
 void mostraTodos(Pessoa p[]){
 	int i;
 	for(i=0; i<qtdade; i++){
-		mostraPessoa(p[i])/
+		mostraPessoa(p[i])
+	
 	}
 }
 
@@ -27,7 +28,22 @@ void merge(Pessoa vA[], int qA, Pessoa vB[],int qB, Pessoa vC[]){
 	int i=0,j=0,k=0;
 	// joga A e B para a saida, respeitabndo a Ordem
 	while (i <qA && j < qB){	
+		int compara = strcmp(vA[i].cpf, vB[j].cpf);
+		if (compara < 0 ){
+			vC[k++] = vA[i++];
+			//i++;
+			//k++;
+		} else
+			if (compara > 0)
+				vC[k++] = vB[i++];
+			else{
+				vC[k++] = vA[i++];
+				j++;
+			}
 	};
+	
+	while(i<qA)
+		vC
 	// jogar para a saida o vetor que não acabou
 	while(i < qA){
 	}
